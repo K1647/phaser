@@ -1,9 +1,8 @@
 demo.state9 = function(){};
 demo.state9.prototype = {
-    prelode: function(){},
+    preload: function(){},
     create: function(){
         game.stage.backgroundColor = '#ffcc66';
-        console.log('state9');
         addChangeStateEventListeners();
     },
     update: function(){}

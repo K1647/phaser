@@ -1,14 +1,13 @@
 var demo = {}, centerX = 1500 / 2, centerY = 1000 / 2, adam, speed = 4;
 demo.state0 = function(){};
 demo.state0.prototype = {
-    prelode: function(){
+    preload: function(){
         game.load.spritesheet('adam', 'assets/spritesheets/adamSheet.png', 240, 370);
         game.load.image('tree', 'assets/backgrounds/treeBG.png');
     },
     create: function(){
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.stage.backgroundColor = '#80ff80';
-        console.log('state0');
         addChangeStateEventListeners();
         game.world.setBounds(0, 0, 2813, 1000);
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -54,6 +53,7 @@ demo.state0.prototype = {
 };
 
 function changeState(i, stateNum){
+    console.log('state' + stateNum);
     game.state.start('state' + stateNum);
 }
 function addKeyCallback(key, fn, args){
